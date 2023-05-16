@@ -1,0 +1,222 @@
+/* CSS Variables */
+:root {
+  --primary: #ddd;
+  --dark: rgb(70, 70, 70);
+  --light: whitesmoke;
+  --shadow: 0 4px 7px rgba(104, 104, 104, 0.8);
+}
+
+html {
+  box-sizing: border-box;
+  color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #ccc;
+  margin: 20px 40px;
+  line-height: 1.4;
+}
+
+.btn {
+  background-color: var(--dark);
+  color: var(--light);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 1.2rem;
+}
+
+/* Navigation */
+.main-nav ul {
+  display: grid;
+  grid-gap: 1.2rem;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  text-decoration: none;
+  background-color: var(--primary);
+  display: block;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  background-color: var(--dark);
+  color: var(--primary);
+}
+
+/* Home */
+
+#home {
+  display: grid;
+  grid-gap: 1.2rem;
+  grid-template-areas:
+    "showcase showcase box1"
+    "showcase showcase box2";
+}
+
+.show-case {
+  grid-area: showcase;
+  min-height: 350px;
+  padding: 3rem;
+  background: url(img/showcase.jpg) center center/cover;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.show-case h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+
+.show-case p {
+  font-size: 1.3rem;
+  color: var(--light);
+  margin-top: 0;
+}
+
+.top-box {
+  background-color: var(--primary);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.top-box h4 {
+  font-size: 1.2rem;
+}
+
+.top-box .price {
+  font-size: 2.4rem;
+}
+
+/* Boxes */
+#boxes {
+  display: grid;
+  grid-gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.box {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+}
+
+.box h3 {
+  font-size: 1.3rem;
+}
+
+#box1 {
+  grid-area: box1;
+}
+#box2 {
+  grid-area: box2;
+}
+
+/* INFO */
+
+#info {
+  background-color: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 1.2rem;
+  padding: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+#info p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+#info .btn{
+   margin: 13rem;
+}
+
+/* PORTFOLIO */
+
+#portfolio {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#portfolio {
+  width: 100%;
+  box-shadow: var(--shadow);
+  margin: 0;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 1rem;
+  background-color: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+  #home {
+    grid-template-areas:
+      "showcase showcase "
+      "box1 box2";
+  }
+
+  .show-case h1 {
+    font-size: 2.5rem;
+  }
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+  #info {
+    grid-template-columns: 1fr;
+  }
+  #info .btn {
+    display: block;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  #home {
+    grid-template-areas:
+      "showcase"
+      "box1"
+      "box2";
+  }
+}
